@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head th:replace="/fragments/head :: head"></head>
+
+    <body>
+        <header>
+
+            <nav th:replace="/fragments/navbar :: nav"></nav>
+
+        </header>
+        <main>
+            <section class="row sectionMain">
+                <div class="col-12 sectionMain01">
+                    <h2>Clientes</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">DNI</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Celular</th>
+                                <th scope="col">Esta activo?</th>
+                                <th scope="col">Alta/Baja</th>
+                                <th scope="col">Editar</th>
+                            </tr>
+                        </thead>
+                        <tbody th:each="cliente : ${clientes}">
+                        <p th:unless="${cliente != null}">No hay clientes en la base de datos.</p>
+                        <tr>
+                            <td scope="row" th:text="${cliente.dni}"></td>
+                            <th th:text="${cliente.name}"></th>
+                            <td th:text="${cliente.surname}"></td>
+                            <td th:text="${cliente.phone}"></td>
+                            <td>
+                                <i th:if="${cliente.availability}" class="far fa-check-circle text-success"></i>
+                                <i th:unless="${cliente.availability}" class="fas fa-times" style="color:red;"></i>
+                            </td>
+                            <td>
+                                <a th:unless="${cliente.availability}" th:href="@{/cliente/alta/__${cliente.id}__}"><i class="fa fa-arrow-up" style="color: green;"></i></a> 
+                                <a th:if="${cliente.availability}" th:href="@{/cliente/baja/__${cliente.id}__}"><i class="fa fa-ban" style="color: red;"></i></a>
+                            </td>
+                            <td>
+                                <a th:href="@{/cliente/modificar/__${cliente.id}__}"><i class="fas fa-edit" style="color: #FFB319;"></i></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="agregarBtn">
+                        <a href="/cliente/registro" class="btn btnColor">Agregar Cliente</a>
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+        <footer th:replace="/fragments/footer :: footer"></footer>
+        <script th:replace="/fragments/scriptBootstrap :: script"></script>
+
+    </body>
+
+</html>

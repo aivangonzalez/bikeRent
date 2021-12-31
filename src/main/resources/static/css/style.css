@@ -1,0 +1,149 @@
+/* ---------------------------Navbar----------------------- */
+
+
+.bgNavbar{
+    background-color: #FFB319;
+    display: flex;
+    
+}
+
+.logoPosition{
+    font-family: 'Rock 3D', cursive;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.nameLogo{
+    color: black;
+}
+
+.listStyle{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.1em;
+    justify-content: flex-end;
+}
+   
+.itemsNav{
+    font-family: 'Rock 3D', cursive;
+    font-weight: bold;
+}
+
+.itemsNav:hover{
+    padding-bottom: 2px;
+    border-bottom: 1px solid #2C272E;
+}
+
+
+/* ---------------------------------------MAIN-------------------------------------------- */
+h1{
+    font-family: 'Rock 3D', cursive;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2{
+    font-family: 'Rock 3D', cursive;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sectionMain{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100vh;
+    max-width: 100%;
+}
+
+.sectionMain01{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.sectionMain01Forms{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100vh;
+}
+
+.sectionMain02{
+    background-color: #2C272E;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+}
+
+.sectionMain01 div p{
+    font-family: cursive;
+}
+
+.sectionMain02 p{
+    /* font-family: cursive; */
+    text-align: center;
+    padding-top: 8px;
+}
+
+.flexColumn{
+    
+    margin-bottom: 5px;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    
+}
+
+/*modifica los labels de los formularios*/
+.flexColumn div label{
+    font-family: 'Rock 3D', cursive;
+    color: black;
+    font-weight: bolder;
+}
+
+/*modifica los botones de agregar cliente y bicileta del form-rental*/
+.flexColumn div div div a{
+    font-family: 'Rock 3D', cursive;
+    color: black;
+    font-weight: bolder;
+}
+
+.btnColor{
+    font-family: 'Rock 3D', cursive;
+    color: black;
+    font-weight: bolder;
+    background-color: #FFB319;
+}
+
+.btnColor:hover{
+    color: #FFB319;
+    font-weight: bolder;
+    background-color: black;
+}
+
+/* ---------------------------------------FOOTER-------------------------------------------- */
+.iconsPosition{
+    width: 100%;
+    height: 3.5em;
+    border-top: 1px solid grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    color: #FFB319;
+}
+
+.icon:hover{
+    color: black;
+}

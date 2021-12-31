@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head th:replace="/fragments/head :: head"></head>
+
+    <body>
+        <header>
+
+            <nav th:replace="/fragments/navbar :: nav"></nav>
+
+        </header>
+        <main>
+            <section class="row sectionMain">
+                <div class="col-12 col-sm-8 sectionMain01">
+                    <div>
+                        <img src="/img/biciMain2.png" width="400"  class="" alt="">
+                    </div>
+                    <div>
+                        <h1>bikeRent</h1>
+                        <p>¡¡Disfruta del aire libre, Disfruta de bikeRent!!</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4 sectionMain02 text-light">
+                    <h2>¿Qué podes hacer en la app?</h2>
+                    <p>Con esta aplicación web podrás administrar el stock de bicicletas, los clientes y los distintos alquileres que las personas van realizando.</p>
+                    <p>Esta versión de la app está destinada para un uso exclusivamente administrativo.</p>
+                </div>
+            </section>
+        </main>
+        <footer th:replace="/fragments/footer :: footer"></footer>
+        <script th:replace="/fragments/scriptBootstrap :: script"></script>
+
+    </body>
+
+</html>

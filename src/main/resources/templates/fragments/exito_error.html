@@ -1,0 +1,14 @@
+<div>
+    <div th:if="${exito}!=null" class="card mt-5" >
+        <div class="card-body">
+            <h5 class="card-title">Genial!!</h5>
+            <p class="card-text" th:text="${exito}"></p>
+        </div>
+    </div>
+    <div th:if="${error}!=null" class="card mt-5" >
+        <div class="card-body">
+            <h5 class="card-title">Algo salio mal!!</h5>
+            <p class="card-text" th:text="${error}"></p>
+        </div>
+    </div>
+</div>

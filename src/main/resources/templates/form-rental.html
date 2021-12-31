@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head th:replace="/fragments/head :: head"></head>
+
+    <body>
+        <header>
+
+            <nav th:replace="/fragments/navbar :: nav"></nav>
+
+        </header>
+        <main>
+            <section class="row sectionMain">
+                <div class="col-12 col-sm-8 sectionMain01">
+                    <div th:replace="/fragments/exito_error :: div"></div>
+                    <h2 class="mt-5 pb-2">Registro de Alquileres</h2>
+                    <form th:action="@{/alquiler/registro}" method="POST" class="col-5 flexColumn">
+                        <input hidden th:value="${id}" name="id">
+                        <div class="form-group">
+                            <label for="hours">Horas</label>
+                            <input type="number" class="form-control" name="hours">
+                        </div>
+                        <div class="form-group">
+                            <label for="client">Cliente</label><br>
+                            <div class="pFlex">
+                                <select class="form-control custom-select" name="client">
+                                    <option selected disabled>Seleccione el cliente</option>
+                                    <option th:each="cliente: ${clientes}" th:value="${cliente.id}" th:text="${cliente.name + ' ' +cliente.surname + ', dni: ' + cliente.dni}"></option>
+                                </select>                            
+                                <div>
+                                    <a href="/cliente/registro" class="btn btn-light ml-3 mt-2">Agregar Cliente</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bike">Bicicleta</label><br>
+                            <div class="pFlex">
+                                <select class="form-control custom-select" name="bike">
+                                    <option selected disabled>Seleccione la bicicleta</option>
+                                    <option th:each="bicicleta: ${bicicletas}" th:value="${bicicleta.id}" th:text="${bicicleta.brand + ', ' + bicicleta.model + ', r' + bicicleta.tyre}"></option>
+                                </select>                            
+                                <div>
+                                    <a href="/bicicleta/registro" class="btn btn-light ml-3 mt-2">Agregar Bicicleta</a>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btnColor mt-2 mb-5">Crear Alquiler</button>
+                    </form>
+                </div>
+                <div class="col-12 col-sm-4 sectionMain02 text-light">
+                    <h2>Tips</h2>
+                    <p>Las bicicletas pueden ser alquiladas como máximo por 7 días seguidos es decir 168 horas.</p>
+                    <p>Solo aparecerán en el desplegable los clientes que estén activos.</p>
+                    <p>Solo aparecerán en el desplegable las bicicletas que tengan cantidad disponible y aquellas que estén activas.</p>
+                </div>
+            </section>
+        </main>
+        <footer th:replace="/fragments/footer :: footer"></footer>
+        <script th:replace="/fragments/scriptBootstrap :: script"></script>
+
+    </body>
+
+</html>
